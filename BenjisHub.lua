@@ -1,8 +1,6 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Benji's Hub", "Ocean")
 
-local Settings = Window:NewTab("Settings")
-local SettingsSection = Settings:NewSection("Settings")
 local GlobalContent = Window:NewTab("Universal Content")
 local GlobalContentSection = GlobalContent:NewSection("Universal Content")
 
@@ -142,11 +140,6 @@ end
 local TPS = game:GetService("TeleportService")
 
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
--- Settings:
-
-SettingsSection:NewKeybind("Hide/Reveal button", "This hides or reveals this hub!", Enum.KeyCode.RightAlt, function()
-	Library:ToggleUI()
-end)
 
 -- Universal content
 
@@ -260,6 +253,10 @@ else
 
                 local TS = game:GetService("TweenService")
 
+                local UICorner = Instance.new("UICorner")
+                local UICorner2 = Instance.new("UICorner")
+                local UICorner3 = Instance.new("UICorner")
+                local UICorner4 = Instance.new("UICorner")
                 local wizardHax = Instance.new("ScreenGui")
                 local main = Instance.new("Frame")
                 local title = Instance.new("TextLabel")
@@ -577,6 +574,8 @@ else
                 TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
                 TextLabel.TextSize = 14.000
 
+                UICorner4.Parent = TextLabel
+
                 closeButton_3.Name = "closeButton"
                 closeButton_3.Parent = funcGUI
                 closeButton_3.BackgroundColor3 = Color3.fromRGB(255, 180, 28)
@@ -604,7 +603,7 @@ else
                 funcButton1.TextColor3 = Color3.fromRGB(0, 0, 0)
                 funcButton1.TextSize = 14.000
                 funcButton1.MouseButton1Down:Connect(function()
-                    funcButton1.Text = "Fireed"
+                    funcButton1.Text = "Fired"
                     wait(1)
                     funcButton1.Text = "Noclip"
                     noclip()
@@ -694,6 +693,11 @@ else
                 funcButton8.Text = "func 8"
                 funcButton8.TextColor3 = Color3.fromRGB(0, 0, 0)
                 funcButton8.TextSize = 14.000
+
+                UICorner.Parent = main
+                UICorner2.Parent = funcGUI
+                UICorner3.Parent = healthGUI
+
                 wait(1)
                 TS:Create(main, TweenInfo.new(0.5), {Position = TP2}):Play()
                 wait(2)
@@ -814,6 +818,84 @@ else
                     end
                 end
             end)
+            GameSpecificContentSection:NewButton("Show Money", "Shows current money.", function()
+                local ScreenGui = Instance.new("ScreenGui")
+                local Main = Instance.new("Frame")
+                local NoClip = Instance.new("TextLabel")
+                local injected = Instance.new("TextButton")
+
+                local UICorner = Instance.new("UICorner")
+                local UICorner_2 = Instance.new("UICorner")
+                local UICorner_3 = Instance.new("UICorner")
+                local UIStroke = Instance.new("UIStroke")
+            
+                --Properties:
+            
+                ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+                ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                ScreenGui.Name = "ScreenerGuier"
+                ScreenGui.ResetOnSpawn = false
+            
+                Main.Name = "Main"
+                Main.Parent = ScreenGui
+                Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                Main.Position = UDim2.new(0, 0, 0.925, 0)
+                Main.Size = UDim2.new(0.15, 0, 0.075, 0)
+                Main.Draggable = true
+                Main.Selectable = true
+                Main.Active = true
+
+                UIStroke.Parent = Main
+                UICorner.Parent = Main
+            
+                NoClip.Name = "NoClip"
+                NoClip.Parent = Main
+                NoClip.BackgroundColor3 = Color3.fromRGB(255, 215, 10)
+                NoClip.Position = UDim2.new(0, 0, 0.5, 0)
+                NoClip.Size = UDim2.new(1, 0, 0.5, 0)
+                NoClip.Font = Enum.Font.Cartoon
+                NoClip.Text = "Money: "..game:GetService("Players").LocalPlayer.leaderstats.Cash.Value
+                NoClip.TextColor3 = Color3.fromRGB(0, 0, 0)
+                NoClip.TextScaled = true
+                NoClip.TextSize = 14.000
+                NoClip.TextWrapped = true
+            
+                UICorner_2.Parent = Noclip
+
+                local injected = Instance.new("TextButton")
+
+                injected.Name = "injected"
+                injected.Parent = Main
+                injected.BackgroundColor3 = Color3.fromRGB(255, 10, 10)
+                injected.Position = UDim2.new(0, 0, 0, 0)
+                injected.Size = UDim2.new(1, 0, 0.5, 0)
+                injected.Font = Enum.Font.Cartoon
+                injected.Text = "Close"
+                injected.TextColor3 = Color3.fromRGB(0, 0, 0)
+                injected.TextScaled = true
+                injected.TextSize = 14.000
+                injected.TextWrapped = true
+                UICorner_3.Parent = injected
+                while wait() do
+                    local function comma_value(amount)
+                        local k
+                        local formatted = amount
+                        while true do  
+                            formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
+                            if (k==0) then
+                                    NoClip.Text = "Money: $"..formatted
+                                break
+                            end
+                        end
+                        return formatted
+                    end
+
+                    comma_value(game:GetService("Players").LocalPlayer.leaderstats.Cash.Value)
+                    injected.MouseButton1Down:Connect(function()
+                        ScreenGui:Destroy()
+                    end)
+                end
+            end)
          end
     end
 end
@@ -827,6 +909,14 @@ ExternalScriptSection:NewButton("Inf Yield", "Opens Inf Yield.", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
+-- Settings:
+
+local Settings = Window:NewTab("Settings")
+local SettingsSection = Settings:NewSection("Settings")
+
+SettingsSection:NewKeybind("Hide/Reveal button", "This hides or reveals this hub!", Enum.KeyCode.RightAlt, function()
+	Library:ToggleUI()
+end)
 
 local Credits = Window:NewTab("Credits")
 local CreditsSection = Credits:NewSection("Credits")
