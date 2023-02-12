@@ -38,12 +38,12 @@ checkVersionIsUpToDate()
 if checkVersionIsUpToDate() == false then
 	AboutSection:NewLabel("Version: '"..RealVersion.."' is out of date!\n  Click the button below to launch a new version.")
 	AboutSection:NewButton("Launch Benji's hub", "Launches Benji's hub.", function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/benjikad/Roblox-Scripts/main/BenjisHub.lua'))()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/benjikad/Roblox-Scripts/BenjisHubStuff/BenjisHub.lua'))()
 	end)
 else
 	AboutSection:NewLabel("Version: '"..RealVersion.."' is the latest version.\n You have the correct version.")
 	AboutSection:NewButton("Launch Benji's hub", "Launches Benji's hub.", function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/benjikad/Roblox-Scripts/main/BenjisHub.lua'))()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/benjikad/Roblox-Scripts/BenjisHubStuff/BenjisHub.lua'))()
 	end)
 end
 
