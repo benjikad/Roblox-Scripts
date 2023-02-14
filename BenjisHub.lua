@@ -8,8 +8,6 @@
 --                                 \ \_/  /
 --                                  \____/
 
-local isShutdown = false
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Benji's Hub", "Ocean")
 
@@ -498,6 +496,7 @@ else
 					local autoGetMoney = false -- auto get money
 					local players = game.Players
 					local LocalPlayer = players.LocalPlayer
+					local isShutdown = false
 
 					--Properties:
 
