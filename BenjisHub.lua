@@ -15,7 +15,7 @@ local About = Window:NewTab("About")
 local AboutSection = About:NewSection("About Section")
 
 local Version = "--- -. . / .--. --- .. -. - / - . -. / .--. --- .. -. - / --.. . .-. --- / --- -. ."
-local RealVersion = "1.10.0"
+local RealVersion = "1.10.01"
 
 local TS = game:GetService("TweenService")
 local player = game:GetService("Players").LocalPlayer
