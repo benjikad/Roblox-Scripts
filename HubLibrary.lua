@@ -1,3 +1,4 @@
+print("ham")
 local BL = {}
 
 local tween = game:GetService("TweenService")
@@ -780,7 +781,7 @@ function BL.CreateLib(LName, themeList)
                 if CurrentValue == true then
                     SFrame.BackgroundColor3 = themeList.SchemeColor
                 elseif CurrentValue == false then
-                    SFrame.BackgroundColor3 = themeList.Header -- ElementColor
+                    SFrame.BackgroundColor3 = themeList.ElementColor
                 end
                 SFrame.ZIndex = 10
 
