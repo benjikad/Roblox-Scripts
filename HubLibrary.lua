@@ -773,8 +773,8 @@ function BL.CreateLib(LName, themeList)
 
                 table.insert(modules, bname)
 
-                SFrame.BorderMode = Enum.BorderMode.Inset
-                SFrame.Position = UDim2.new(0.65, 0, 0, 4)
+                SFrame.BorderMode = Enum.BorderMode.Outline
+                SFrame.Position = UDim2.new(0.65, 0, 0, 3)
                 SFrame.Size = UDim2.new(0,75,0,25)
                 SFrame.Name = "InnerSwitchFrame"
                 if CurrentValue == true then
