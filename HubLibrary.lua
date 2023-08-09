@@ -1,4 +1,4 @@
-print("b")
+print("c")
 local BL = {}
 
 local tween = game:GetService("TweenService")
@@ -776,7 +776,9 @@ function BL.CreateLib(LName, themeList)
                 SFrame.Size = UDim2.new(0,75,0,25)
                 SFrame.Name = "InnerSwitchFrame"
                 SFrame.BackgroundColor3 = themeList.SchemeColor
-                SFrame.ZIndex = 9
+                SFrame.ZIndex = 10
+
+                UICorner.CornerRadius = UDim.new(1, 0)
 
                 buttonElement.Name = bname
                 buttonElement.Parent = sectionInners
