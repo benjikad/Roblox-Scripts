@@ -1,4 +1,4 @@
-print("d")
+print("a")
 local BL = {}
 
 local tween = game:GetService("TweenService")
@@ -772,7 +772,7 @@ function BL.CreateLib(LName, themeList)
 
                 table.insert(modules, bname)
 
-                SFrame.Position = UDim2.new(0,0,0.5,0)
+                SFrame.Position = UDim2.new(-0.5,0,1,0)
                 SFrame.Size = UDim2.new(0,75,0,25)
                 SFrame.Name = "InnerSwitchFrame"
                 SFrame.BackgroundColor3 = themeList.SchemeColor
@@ -790,7 +790,6 @@ function BL.CreateLib(LName, themeList)
                 buttonElement.Text = ""
                 buttonElement.TextColor3 = Color3.fromRGB(0, 0, 0)
                 buttonElement.TextSize = 14.000
-                buttonElement.Transparency = 0.5
                 Objects[buttonElement] = "BackgroundColor3"
 
                 UICorner.CornerRadius = UDim.new(0, 4)
