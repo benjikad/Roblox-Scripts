@@ -764,7 +764,16 @@ function BL.CreateLib(LName, themeList)
                 local touch = Instance.new("ImageLabel")
                 local Sample = Instance.new("ImageLabel")
 
+                local SFrame = Instance.new("Frame", buttonElement)
+                local Ball = Instance.new("Frame", SFrame)
+                local UICornerSF = Instance.new("UICorner", SFrame)
+                local UICornerBall = Instance.new("UICorner", Ball)
+
                 table.insert(modules, bname)
+
+                SFrame.Position = UDim2.new(0,0,1,0)
+                SFrame.Size = UDim2.new(0,75,0,25)
+                SFrame.Name = "InnerSwitchFrame"
 
                 buttonElement.Name = bname
                 buttonElement.Parent = sectionInners
