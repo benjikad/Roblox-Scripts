@@ -914,7 +914,7 @@ function BL.CreateLib(LName, themeList)
                         else
                             tween:Create(Ball, TweenInfo.new(0.25), {Position = UDim2.new(1,-23,0,0)}):Play()
 
-                            tween:Create(SFrame, TweenInfo.new(0.25), {BackgroundColor3 = themeList.Header}):Play()
+                            tween:Create(SFrame, TweenInfo.new(0.25), {BackgroundColor3 = themeList.Background}):Play()
                         end
 
                         local c = sample:Clone()
