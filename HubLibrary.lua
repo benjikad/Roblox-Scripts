@@ -1,3 +1,4 @@
+print("aba")
 local BL = {}
 
 local tween = game:GetService("TweenService")
@@ -756,6 +757,7 @@ function BL.CreateLib(LName, themeList)
                 bname = bname or "Click Me!"
                 org_value = org_value or false
                 callback = callback or function() end
+                local CurrentValue = org_value
 
                 local buttonElement = Instance.new("TextButton")
                 local UICorner = Instance.new("UICorner")
@@ -903,7 +905,15 @@ function BL.CreateLib(LName, themeList)
 
                 btn.MouseButton1Click:Connect(function()
                     if not focusing then
-                        callback()
+                        CurrentValue = not CurrentValue
+                        callback(CurrentValue)
+
+                        if CurrentValue == true then
+                            tween:Create(Ball, TweenInfo.new(0.5), {Position = UDim2.new(0,0,0,0)}):Play()
+                        else
+                            tween:Create(Ball, TweenInfo.new(0.5), {Position = UDim2.new(1,-25,0,0)}):Play()
+                        end
+
                         local c = sample:Clone()
                         c.Parent = btn
                         local x, y = (ms.X - c.AbsolutePosition.X), (ms.Y - c.AbsolutePosition.Y)
