@@ -1,3 +1,4 @@
+print("aaa")
 local BL = {}
 
 local tween = game:GetService("TweenService")
@@ -776,7 +777,7 @@ function BL.CreateLib(LName, themeList)
                 SFrame.Name = "InnerSwitchFrame"
                 if org_value == true then
                     SFrame.BackgroundColor3 = themeList.SchemeColor
-                elseif org_value == false
+                elseif org_value == false then
                     SFrame.BackgroundColor3 = themeList.SchemeColor
                 end
                 SFrame.ZIndex = 10
