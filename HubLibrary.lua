@@ -773,7 +773,7 @@ function BL.CreateLib(LName, themeList)
 
                 table.insert(modules, bname)
 
-                SFrame.BorderMode = Enum.BorderMode.Middle
+                SFrame.BorderMode = Enum.BorderMode.Inset
                 SFrame.Position = UDim2.new(0.65, 0, 0, 4)
                 SFrame.Size = UDim2.new(0,75,0,25)
                 SFrame.Name = "InnerSwitchFrame"
@@ -908,13 +908,13 @@ function BL.CreateLib(LName, themeList)
                         callback(CurrentValue)
 
                         if CurrentValue == true then
-                            tween:Create(Ball, TweenInfo.new(0.1), {Position = UDim2.new(0,0,0,0)}):Play()
+                            tween:Create(Ball, TweenInfo.new(0.25), {Position = UDim2.new(0,0,0,0)}):Play()
 
-                            tween:Create(SFrame, TweenInfo.new(0.1), {BackgroundColor3 = themeList.SchemeColor}):Play()
+                            tween:Create(SFrame, TweenInfo.new(0.25), {BackgroundColor3 = themeList.SchemeColor}):Play()
                         else
-                            tween:Create(Ball, TweenInfo.new(0.1), {Position = UDim2.new(1,-23,0,0)}):Play()
+                            tween:Create(Ball, TweenInfo.new(0.25), {Position = UDim2.new(1,-23,0,0)}):Play()
 
-                            tween:Create(SFrame, TweenInfo.new(0.1), {BackgroundColor3 = themeList.Header}):Play()
+                            tween:Create(SFrame, TweenInfo.new(0.25), {BackgroundColor3 = themeList.Header}):Play()
                         end
 
                         local c = sample:Clone()
