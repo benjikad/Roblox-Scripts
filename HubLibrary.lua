@@ -1,4 +1,4 @@
-print("c")
+print("d")
 local BL = {}
 
 local tween = game:GetService("TweenService")
@@ -790,6 +790,7 @@ function BL.CreateLib(LName, themeList)
                 buttonElement.Text = ""
                 buttonElement.TextColor3 = Color3.fromRGB(0, 0, 0)
                 buttonElement.TextSize = 14.000
+                buttonElement.Transparency = 0.5
                 Objects[buttonElement] = "BackgroundColor3"
 
                 UICorner.CornerRadius = UDim.new(0, 4)
