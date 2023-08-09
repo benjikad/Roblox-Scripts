@@ -1,3 +1,4 @@
+print("ham")
 local BL = {}
 
 local tween = game:GetService("TweenService")
@@ -782,11 +783,11 @@ function BL.CreateLib(LName, themeList)
                 SFrame.ZIndex = 10
 
                 if org_value == true then
-                    Ball.Position = UDim2.new(0, -15, 0, -3)
+                    Ball.Position = UDim2.new(0, 0, 0, 0)
                 else
-                    Ball.Position = UDim2.new(1, -15, 0, -3)
+                    Ball.Position = UDim2.new(1, -25, 0, 0)
                 end
-                Ball.Size = UDim2.new(0,30,0,30)
+                Ball.Size = UDim2.new(0,25,0,25)
                 Ball.Name = "InnerSwitchFrame"
                 Ball.BackgroundColor3 = themeList.Background
                 Ball.ZIndex = 11
