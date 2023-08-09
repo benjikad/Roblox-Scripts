@@ -780,7 +780,7 @@ function BL.CreateLib(LName, themeList)
                 if CurrentValue == true then
                     SFrame.BackgroundColor3 = themeList.SchemeColor
                 elseif CurrentValue == false then
-                    SFrame.BackgroundColor3 = themeList.Header
+                    SFrame.BackgroundColor3 = themeList.Header -- ElementColor
                 end
                 SFrame.ZIndex = 10
 
