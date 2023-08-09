@@ -1,4 +1,3 @@
-print("aaa")
 local BL = {}
 
 local tween = game:GetService("TweenService")
@@ -778,7 +777,7 @@ function BL.CreateLib(LName, themeList)
                 if org_value == true then
                     SFrame.BackgroundColor3 = themeList.SchemeColor
                 elseif org_value == false then
-                    SFrame.BackgroundColor3 = themeList.SchemeColor
+                    SFrame.BackgroundColor3 = themeList.Header
                 end
                 SFrame.ZIndex = 10
 
@@ -789,7 +788,7 @@ function BL.CreateLib(LName, themeList)
                 end
                 Ball.Size = UDim2.new(0,30,0,30)
                 Ball.Name = "InnerSwitchFrame"
-                Ball.BackgroundColor3 = themeList.ElementColor
+                Ball.BackgroundColor3 = themeList.Background
                 Ball.ZIndex = 11
 
                 UICornerSF.CornerRadius = UDim.new(1, 0)
