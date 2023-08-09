@@ -1,4 +1,3 @@
-print("aba")
 local BL = {}
 
 local tween = game:GetService("TweenService")
@@ -778,9 +777,9 @@ function BL.CreateLib(LName, themeList)
                 SFrame.Position = UDim2.new(0.65, 0, 0, 4)
                 SFrame.Size = UDim2.new(0,75,0,25)
                 SFrame.Name = "InnerSwitchFrame"
-                if org_value == true then
+                if CurrentValue == true then
                     SFrame.BackgroundColor3 = themeList.SchemeColor
-                elseif org_value == false then
+                elseif CurrentValue == false then
                     SFrame.BackgroundColor3 = themeList.Header
                 end
                 SFrame.ZIndex = 10
@@ -909,9 +908,13 @@ function BL.CreateLib(LName, themeList)
                         callback(CurrentValue)
 
                         if CurrentValue == true then
-                            tween:Create(Ball, TweenInfo.new(0.5), {Position = UDim2.new(0,0,0,0)}):Play()
+                            tween:Create(Ball, TweenInfo.new(0.1), {Position = UDim2.new(0,0,0,0)}):Play()
+
+                            tween:Create(SFrame, TweenInfo.new(0.1), {BackgroundColor3 = themeList.SchemeColor}):Play()
                         else
-                            tween:Create(Ball, TweenInfo.new(0.5), {Position = UDim2.new(1,-25,0,0)}):Play()
+                            tween:Create(Ball, TweenInfo.new(0.1), {Position = UDim2.new(1,-23,0,0)}):Play()
+
+                            tween:Create(SFrame, TweenInfo.new(0.1), {BackgroundColor3 = themeList.Header}):Play()
                         end
 
                         local c = sample:Clone()
