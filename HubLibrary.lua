@@ -1,4 +1,3 @@
-print("ham")
 local BL = {}
 
 local tween = game:GetService("TweenService")
@@ -769,9 +768,11 @@ function BL.CreateLib(LName, themeList)
                 local Ball = Instance.new("Frame", SFrame)
                 local UICornerSF = Instance.new("UICorner", SFrame)
                 local UICornerBall = Instance.new("UICorner", Ball)
+                local UIStrokeSF = Instance.new("UIStroke", SFrame)
 
                 table.insert(modules, bname)
 
+                SFrame.BorderMode = Enum.BorderMode.Middle
                 SFrame.Position = UDim2.new(0.65, 0, 0, 4)
                 SFrame.Size = UDim2.new(0,75,0,25)
                 SFrame.Name = "InnerSwitchFrame"
@@ -791,6 +792,10 @@ function BL.CreateLib(LName, themeList)
                 Ball.Name = "InnerSwitchFrame"
                 Ball.BackgroundColor3 = themeList.Background
                 Ball.ZIndex = 11
+
+                UIStrokeSF.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+                UIStrokeSF.Thickness = 2
+                UIStrokeSF.Color = themeList.Background
 
                 UICornerSF.CornerRadius = UDim.new(1, 0)
                 UICornerBall.CornerRadius = UDim.new(1, 0)
