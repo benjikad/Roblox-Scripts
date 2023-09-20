@@ -1,4 +1,3 @@
-print("ham")
 local BL = {}
 
 local tween = game:GetService("TweenService")
