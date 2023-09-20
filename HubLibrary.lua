@@ -1,3 +1,4 @@
+print("heh")
 local BL = {}
 
 local tween = game:GetService("TweenService")
