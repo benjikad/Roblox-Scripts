@@ -779,7 +779,7 @@ function BL.CreateLib(LName, themeList)
                 SFrame.Name = "InnerSwitchFrame"
                 if CurrentValue == true then
                     SFrame.BackgroundColor3 = themeList.SchemeColor
-                elseif CurrentValue == false then
+                else
                     SFrame.BackgroundColor3 = themeList.ElementColor
                 end
                 SFrame.ZIndex = 10
