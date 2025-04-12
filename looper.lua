@@ -1,5 +1,5 @@
 local queueonteleport = queueonteleport or queue_on_teleport
-queueonteleport(str)
+queueonteleport(game:HttpGet("https://raw.githubusercontent.com/benjikad/Roblox-Scripts/refs/heads/B.S.Injector/looper.lua"))
 		
 local Players = game:GetService('Players')
 local TeleportService = game:GetService('TeleportService')
